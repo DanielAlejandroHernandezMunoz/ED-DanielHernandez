@@ -140,12 +140,12 @@ if __name__ == "__main__":
                 isbn = input("ISBN: ").strip()
                 if titulo and autor and isbn:
                     if biblioteca.buscarLibroPorIsbn(isbn):
-                        print("Ya existe un libro con ese ISBN.")
+                        print("Ya existe un libro con ese ISBN")
                     else:
                         biblioteca.agregarLibro(Libro(titulo, autor, isbn))
-                        print(f"Libro '{titulo}' agregado correctamente.")
+                        print(f"Libro '{titulo}' agregado correctamente")
                 else:
-                    print("Datos incompletos.")
+                    print("Datos incompletos")
 
             case "3":
                 biblioteca.VerLibros()
@@ -153,14 +153,14 @@ if __name__ == "__main__":
                 try:
                     user_id = int(input("ID del usuario (1=Juan, 2=María): ").strip())
                 except ValueError:
-                    print("ID inválido.")
+                    print("ID inválido")
                     continue
                 libro = biblioteca.buscarLibroPorIsbn(isbn)
                 usuario = buscar_usuario(usuarios, user_id)
                 if libro and usuario:
                     biblioteca.prestarLibro(libro, usuario)
                 else:
-                    print("Libro o usuario no encontrado.")
+                    print("Libro o usuario no encontrado")
 
             case "4":
                 biblioteca.VerLibros()
@@ -169,11 +169,11 @@ if __name__ == "__main__":
                 if libro:
                     biblioteca.devolverLibro(libro)
                 else:
-                    print("Libro no encontrado.")
+                    print("Libro no encontrado")
 
             case "5":
-                print("Fin del Programa.")
+                print("Fin del Programa")
                 break
 
             case _:
-                print("Opción no válida, intenta de nuevo.")
+                print("Opción no válida, intenta de nuevo")
